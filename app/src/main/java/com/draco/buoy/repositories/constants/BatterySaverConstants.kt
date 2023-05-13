@@ -1,6 +1,6 @@
 package com.draco.buoy.repositories.constants
 
-object BatterySaverConstants {
+object BatterySaverConstants31 {
     const val ADVERTISE_IS_ENABLED =        "advertise_is_enabled"
     const val DATASAVER_DISABLED =          "datasaver_disabled"
     const val ENABLE_NIGHT_MODE =           "enable_night_mode"
@@ -19,4 +19,25 @@ object BatterySaverConstants {
     const val OPTIONAL_SENSORS_DISABLED =   "optional_sensors_disabled"
     const val AOD_DISABLED =                "aod_disabled"
     const val QUICK_DOZE_ENABLED =          "quick_doze_enabled"
+}
+
+object BatterySaverConstants32 {
+    const val ADVERTISE_IS_ENABLED =         "advertise_is_enabled"
+    const val ENABLE_DATASAVER =             "enable_datasaver"
+    const val ENABLE_NIGHT_MODE =            "enable_night_mode"
+    const val DISABLE_LAUNCH_BOOST =         "disable_launch_boost"
+    const val DISABLE_VIBRATION =            "disable_vibration"
+    const val DISABLE_ANIMATION =            "disable_animation"
+    const val DISABLE_SOUNDTRIGGER =         "disable_soundtrigger"
+    const val DEFER_FULL_BACKUP =            "defer_full_backup"
+    const val DEFER_KEYVALUE_BACKUP =        "defer_keyvalue_backup"
+    const val ENABLE_FIREWALL =              "enable_firewall"
+    const val LOCATION_MODE =                "location_mode"
+    const val ENABLE_BRIGHTNESS_ADJUSTMENT = "enable_brightness_adjustment"
+    const val ADJUST_BRIGHTNESS_FACTOR =     "adjust_brightness_factor"
+    const val FORCE_ALL_APPS_STANDBY =       "force_all_apps_standby"
+    const val FORCE_BACKGROUND_CHECK =       "force_background_check"
+    const val DISABLE_OPTIONAL_SENSORS =     "disable_optional_sensors"
+    const val DISABLE_AOD =                  "disable_aod"
+    const val ENABLE_QUICK_DOZE =            "enable_quick_doze"
 }
