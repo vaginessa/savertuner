@@ -9,7 +9,6 @@ import com.draco.buoy.R
 import com.draco.buoy.models.BatterySaverConstantsConfig
 import com.draco.buoy.repositories.profiles.BatterySaverConstantsConfigProfiles
 import com.draco.buoy.utils.BatterySaverManager
-import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import com.google.android.material.snackbar.Snackbar
 
 class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedPreferenceChangeListener {
@@ -126,10 +125,7 @@ class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnS
             getString(R.string.pref_developer_key) -> openURL(getString(R.string.developer_url))
             getString(R.string.pref_source_key) -> openURL(getString(R.string.source_url))
             getString(R.string.pref_contact_key) -> openURL(getString(R.string.contact_url))
-            getString(R.string.pref_licenses_key) -> {
-                val intent = Intent(requireContext(), OssLicensesMenuActivity::class.java)
-                startActivity(intent)
-            }
+            getString(R.string.pref_licenses_key) -> openURL(getString(R.string.license_url))
             else -> return super.onPreferenceTreeClick(preference)
         }
         return true

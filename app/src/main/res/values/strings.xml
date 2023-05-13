@@ -18,6 +18,7 @@
 
     <string name="developer_url" translatable="false">https://www.github.com/tytydraco</string>
     <string name="source_url" translatable="false">https://www.github.com/tytydraco/Buoy</string>
+    <string name="license_url" translatable="false">https://github.com/tytydraco/Buoy/blob/main/LICENSE</string>
     <string name="contact_url" translatable="false">mailto:tylernij@gmail.com</string>
 
     <string name="export_share_title">Battery Saver Constants</string>
