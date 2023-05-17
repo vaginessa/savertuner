@@ -1,22 +1,14 @@
 package com.draco.buoy.utils
 
 import android.content.ContentResolver
+import android.content.Context
 import android.provider.Settings
 import com.draco.buoy.models.BatterySaverConstantsConfig
 import com.draco.buoy.repositories.constants.BatterySaverSecureSettings
+import com.draco.buoy.repositories.profiles.ProfileManager
 
-class BatterySaverManager(private val contentResolver: ContentResolver) {
-    /**
-     * Enable or disable low power mode
-     */
-    fun setLowPower(state: Boolean) {
-        val intBool = if (state) 1 else 0
-        Settings.Global.putInt(
-            contentResolver,
-            BatterySaverSecureSettings.LOW_POWER,
-            intBool
-        )
-    }
+class BatterySaverManager(private val context: Context) {
+    private val contentResolver: ContentResolver = context.contentResolver
 
     /**
      * Return true if low power mode is enabled
@@ -32,7 +24,7 @@ class BatterySaverManager(private val contentResolver: ContentResolver) {
     /**
      * Enable or disable low power sticky mode
      */
-    fun setLowPowerSticky(state: Boolean) {
+    private fun setLowPowerSticky(state: Boolean) {
         val intBool = if (state) 1 else 0
         Settings.Global.putInt(
             contentResolver,
@@ -44,7 +36,7 @@ class BatterySaverManager(private val contentResolver: ContentResolver) {
     /**
      * Enable or disable low power sticky auto disable mode
      */
-    fun setLowPowerStickyAutoDisableEnabled(state: Boolean) {
+    private fun setLowPowerStickyAutoDisableEnabled(state: Boolean) {
         val intBool = if (state) 1 else 0
         Settings.Global.putInt(
             contentResolver,
@@ -56,7 +48,7 @@ class BatterySaverManager(private val contentResolver: ContentResolver) {
     /**
      * Set the raw battery saver constants secure setting
      */
-    fun setConstantsString(constants: String?) {
+    private fun setConstantsString(constants: String?) {
         Settings.Global.putString(
             contentResolver,
             BatterySaverSecureSettings.BATTERY_SAVER_CONSTANTS,
@@ -74,33 +66,18 @@ class BatterySaverManager(private val contentResolver: ContentResolver) {
         )
     }
 
-    /**
-     * Set the battery saver constants secure setting via a config
-     */
-    fun setConstantsConfig(config: BatterySaverConstantsConfig) {
-        setConstantsString(config.toString())
-    }
-
-    /**
-     * Quick way to apply either type of config
-     */
-    fun apply(config: Any?) {
-        when (config) {
-            is String? -> setConstantsString(config)
-            is BatterySaverConstantsConfig -> setConstantsConfig(config)
+    fun apply(config: BatterySaverConstantsConfig?, saveProfilePref: Boolean = true) {
+        config?.let {
+            setLowPowerSticky(true)
+            setLowPowerStickyAutoDisableEnabled(false)
+            setConstantsString(config.toString())
+        } ?: run {
+            setLowPowerSticky(false)
+            setLowPowerStickyAutoDisableEnabled(true)
+            setConstantsString(null)
         }
-
-        setLowPowerSticky(true)
-        setLowPowerStickyAutoDisableEnabled(false)
-    }
-
-    /**
-     * Reset constants to default values
-     */
-    fun resetToDefault() {
-        apply(null)
-
-        setLowPowerSticky(false)
-        setLowPowerStickyAutoDisableEnabled(true)
+        if (saveProfilePref) {
+            ProfileManager(context).setConfig(config)
+        }
     }
 }

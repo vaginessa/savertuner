@@ -4,32 +4,31 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import com.draco.buoy.R
-import com.draco.buoy.repositories.constants.ExternalProfileReceiverIntentConstants
-import com.draco.buoy.repositories.profiles.BatterySaverConstantsConfigProfiles
+import com.draco.buoy.repositories.profiles.Profile
+import com.draco.buoy.repositories.profiles.ProfileManager
 import com.draco.buoy.utils.BatterySaverManager
 
 class ExternalProfileReceiver : BroadcastReceiver() {
     private lateinit var batterySaverManager: BatterySaverManager
 
     override fun onReceive(context: Context, intent: Intent) {
-        batterySaverManager = BatterySaverManager(context.contentResolver)
+        batterySaverManager = BatterySaverManager(context)
 
-        val profileName = intent.getStringExtra(ExternalProfileReceiverIntentConstants.KEY_PROFILE_NAME)
-        val constants = intent.getStringExtra(ExternalProfileReceiverIntentConstants.KEY_CONSTANTS)
+        val profileName = intent.getStringExtra(KEY_PROFILE_NAME)
 
         profileName?.let {
             when (it) {
-                context.getString(R.string.pref_profile_key_light) -> batterySaverManager.apply(BatterySaverConstantsConfigProfiles.LIGHT)
-                context.getString(R.string.pref_profile_key_moderate) -> batterySaverManager.apply(BatterySaverConstantsConfigProfiles.MODERATE)
-                context.getString(R.string.pref_profile_key_high) -> batterySaverManager.apply(BatterySaverConstantsConfigProfiles.HIGH)
-                context.getString(R.string.pref_profile_key_extreme) -> batterySaverManager.apply(BatterySaverConstantsConfigProfiles.EXTREME)
+                context.getString(R.string.pref_profile_key_light) -> ProfileManager(context).current = Profile.LIGHT
+                context.getString(R.string.pref_profile_key_moderate) -> ProfileManager(context).current = Profile.MODERATE
+                context.getString(R.string.pref_profile_key_high) -> ProfileManager(context).current = Profile.HIGH
+                context.getString(R.string.pref_profile_key_extreme) -> ProfileManager(context).current = Profile.EXTREME
             }
         }
 
-        constants?.let {
-            batterySaverManager.apply(it)
-        }
-
         resultData = batterySaverManager.getConstantsString()
+    }
+
+    companion object {
+        const val KEY_PROFILE_NAME = "profile_name"
     }
 }

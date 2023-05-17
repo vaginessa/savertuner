@@ -29,7 +29,7 @@
             android:exported="true"
             tools:ignore="ExportedReceiver" />
 
-        <service android:name=".services.TileResetService"
+        <service android:name=".services.TileDefaultService"
             android:icon="@drawable/ic_baseline_api_24"
             android:label="@string/pref_profile_title_default"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"

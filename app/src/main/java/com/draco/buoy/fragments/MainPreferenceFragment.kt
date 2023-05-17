@@ -8,12 +8,21 @@ import androidx.preference.*
 import com.draco.buoy.R
 import com.draco.buoy.models.BatterySaverConstantsConfig
 import com.draco.buoy.repositories.profiles.BatterySaverConstantsConfigProfiles
+import com.draco.buoy.repositories.profiles.Profile
+import com.draco.buoy.repositories.profiles.ProfileManager
 import com.draco.buoy.utils.BatterySaverManager
 import com.google.android.material.snackbar.Snackbar
 
 class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedPreferenceChangeListener {
     private lateinit var batterySaverManager: BatterySaverManager
+    private lateinit var profileManager: ProfileManager
 
+    private lateinit var profileDefault: SwitchPreference
+    private lateinit var profileLight: SwitchPreference
+    private lateinit var profileModerate: SwitchPreference
+    private lateinit var profileHigh: SwitchPreference
+    private lateinit var profileExtreme: SwitchPreference
+    private lateinit var import: Preference
     private lateinit var advertiseIsEnabled: SwitchPreference
     private lateinit var dataSaverEnabled: SwitchPreference
     private lateinit var enableNightMode: SwitchPreference
@@ -39,7 +48,8 @@ class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnS
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        batterySaverManager = BatterySaverManager(context.contentResolver)
+        batterySaverManager = BatterySaverManager(context)
+        profileManager = ProfileManager(context)
     }
 
     override fun onResume() {
@@ -55,6 +65,12 @@ class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnS
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+        profileDefault = findPreference(getString(R.string.pref_profile_key_default))!!
+        profileLight = findPreference(getString(R.string.pref_profile_key_light))!!
+        profileModerate = findPreference(getString(R.string.pref_profile_key_moderate))!!
+        profileHigh = findPreference(getString(R.string.pref_profile_key_high))!!
+        profileExtreme = findPreference(getString(R.string.pref_profile_key_extreme))!!
+        import = findPreference(getString(R.string.pref_key_import))!!
         advertiseIsEnabled = findPreference(getString(R.string.pref_config_key_advertise_is_enabled))!!
         dataSaverEnabled = findPreference(getString(R.string.pref_config_key_datasaver_enabled))!!
         enableNightMode = findPreference(getString(R.string.pref_config_key_enable_night_mode))!!
@@ -84,7 +100,7 @@ class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnS
         /* On import text changed, apply the new configuration */
         findPreference<EditTextPreference>(getString(R.string.pref_key_import))?.let {
             it.setOnPreferenceChangeListener { _, newValue ->
-                batterySaverManager.setConstantsString(newValue as String)
+                batterySaverManager.apply(BatterySaverConstantsConfig().apply { import(newValue as String) })
                 refreshSettings()
                 return@setOnPreferenceChangeListener true
             }
@@ -94,27 +110,27 @@ class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnS
     override fun onPreferenceTreeClick(preference: Preference): Boolean {
         when (preference.key) {
             getString(R.string.pref_profile_key_default) -> {
-                batterySaverManager.resetToDefault()
+                profileManager.current = Profile.DEFAULT
                 Snackbar.make(requireView(), getString(R.string.snackbar_reset), Snackbar.LENGTH_SHORT).show()
                 refreshSettings()
             }
             getString(R.string.pref_profile_key_light) -> {
-                batterySaverManager.apply(BatterySaverConstantsConfigProfiles.LIGHT)
+                profileManager.current = Profile.LIGHT
                 Snackbar.make(requireView(), getString(R.string.snackbar_applied), Snackbar.LENGTH_SHORT).show()
                 refreshSettings()
             }
             getString(R.string.pref_profile_key_moderate) -> {
-                batterySaverManager.apply(BatterySaverConstantsConfigProfiles.MODERATE)
+                profileManager.current = Profile.MODERATE
                 Snackbar.make(requireView(), getString(R.string.snackbar_applied), Snackbar.LENGTH_SHORT).show()
                 refreshSettings()
             }
             getString(R.string.pref_profile_key_high) -> {
-                batterySaverManager.apply(BatterySaverConstantsConfigProfiles.HIGH)
+                profileManager.current = Profile.HIGH
                 Snackbar.make(requireView(), getString(R.string.snackbar_applied), Snackbar.LENGTH_SHORT).show()
                 refreshSettings()
             }
             getString(R.string.pref_profile_key_extreme) -> {
-                batterySaverManager.apply(BatterySaverConstantsConfigProfiles.EXTREME)
+                profileManager.current = Profile.EXTREME
                 Snackbar.make(requireView(), getString(R.string.snackbar_applied), Snackbar.LENGTH_SHORT).show()
                 refreshSettings()
             }
@@ -171,6 +187,38 @@ class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnS
                 it.import(currentProfileString)
         }
 
+        val profile = context?.let { ProfileManager(it).current } ?: Profile.DEFAULT
+        profileDefault.isChecked = profile == Profile.DEFAULT
+        profileLight.isChecked = profile == Profile.LIGHT
+        profileModerate.isChecked = profile == Profile.MODERATE
+        profileHigh.isChecked = profile == Profile.HIGH
+        profileExtreme.isChecked = profile == Profile.EXTREME
+
+        if (profile == Profile.DEFAULT) {
+            listOf(
+                import,
+                advertiseIsEnabled,
+                dataSaverEnabled,
+                enableNightMode,
+                launchBoostEnabled,
+                vibrationEnabled,
+                animationEnabled,
+                soundTriggerEnabled,
+                fullBackupDeferred,
+                keyValueBackupDeferred,
+                fireWallEnabled,
+                gpsMode,
+                adjustBrightnessEnabled,
+                adjustBrightnessFactor,
+                forceAllAppsStandby,
+                forceBackgroundCheck,
+                optionalSensorsEnabled,
+                aodEnabled,
+                quickDozeEnabled
+            ).forEach {
+                it.isEnabled = false
+            }
+        }
         advertiseIsEnabled.isChecked = currentProfile.advertiseIsEnabled
         dataSaverEnabled.isChecked = !currentProfile.dataSaverDisabled
         enableNightMode.isChecked = currentProfile.enableNightMode
@@ -195,6 +243,7 @@ class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnS
      * Take the UI settings and apply them as constants
      */
     private fun applySettings() {
+        (profileManager.current == Profile.DEFAULT) && return
         val config = BatterySaverConstantsConfig(
             advertiseIsEnabled.isChecked,
             !dataSaverEnabled.isChecked,
@@ -240,6 +289,7 @@ class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnS
      * When settings are changed, apply the new config
      */
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
+        key?.startsWith(ProfileManager.PREF_PREFIX) == true && return
         applySettings()
     }
 }
