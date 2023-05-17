@@ -9,6 +9,8 @@ object BatterySaverConstantsConfigProfiles {
      */
     val LIGHT = BatterySaverConstantsConfig(
         advertiseIsEnabled = false,
+        fullBackupDeferred = false,
+        keyValueBackupDeferred = false,
         enableNightMode = false,
         launchBoostDisabled = false,
         vibrationDisabled = false,
