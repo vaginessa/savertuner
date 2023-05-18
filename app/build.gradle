@@ -9,11 +9,11 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.draco.buoy"
+        applicationId "s1m.savertuner"
         minSdk 26
         targetSdk 33
-        versionCode 5
-        versionName "1.0.4"
+        versionCode 1
+        versionName "0.1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

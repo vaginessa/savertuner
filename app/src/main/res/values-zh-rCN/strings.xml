@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Buoy</string>
+    <string name="app_name">SaverTuner</string>
     <string name="title_permission">权限</string>
-    <string name="permission_title">诶嘿！</string>
     <string name="permission_message">我们需要一个特殊权限以继续。用 ADB 执行下面这行指令（只有一行）：</string>
     <string name="please_wait">等待权限</string>
     <string name="copied">复制到剪切板</string>
@@ -66,11 +65,6 @@
     <string name="pref_config_summary_aod_enabled">在睡眠模式下启用息屏显示</string>
     <string name="pref_config_title_quick_doze_enabled">启用低电耗模式</string>
     <string name="pref_config_summary_quick_doze_enabled">屏幕关闭后立即进入深度休眠状态</string>
-    <string name="pref_developer_title">开发者</string>
     <string name="pref_source_title">源代码</string>
-    <string name="pref_source_summary">在 GitHub 上查看该项目</string>
-    <string name="pref_contact_title">联系</string>
-    <string name="pref_contact_summary">如有意见建议，请发电子邮件给我</string>
-    <string name="pref_licenses_title">许可证</string>
-    <string name="pref_licenses_summary">查看开源许可证</string>
+    <string name="pref_source_summary">在 Codeberg 上查看该项目</string>
 </resources>
