@@ -21,6 +21,7 @@ class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnS
     private lateinit var profileModerate: SwitchPreference
     private lateinit var profileHigh: SwitchPreference
     private lateinit var profileExtreme: SwitchPreference
+    private lateinit var export: Preference
     private lateinit var import: Preference
     private lateinit var advertiseIsEnabled: SwitchPreference
     private lateinit var dataSaverEnabled: SwitchPreference
@@ -69,6 +70,7 @@ class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnS
         profileModerate = findPreference(getString(R.string.pref_profile_key_moderate))!!
         profileHigh = findPreference(getString(R.string.pref_profile_key_high))!!
         profileExtreme = findPreference(getString(R.string.pref_profile_key_extreme))!!
+        export = findPreference(getString(R.string.pref_key_export))!!
         import = findPreference(getString(R.string.pref_key_import))!!
         advertiseIsEnabled = findPreference(getString(R.string.pref_config_key_advertise_is_enabled))!!
         dataSaverEnabled = findPreference(getString(R.string.pref_config_key_datasaver_enabled))!!
@@ -192,6 +194,7 @@ class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnS
 
         if (profile == Profile.DEFAULT) {
             listOf(
+                export,
                 import,
                 advertiseIsEnabled,
                 dataSaverEnabled,
