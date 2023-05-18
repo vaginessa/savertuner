@@ -195,33 +195,32 @@ class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnS
         profileHigh.isChecked = profile == Profile.HIGH
         profileExtreme.isChecked = profile == Profile.EXTREME
 
-        if (profile == Profile.DEFAULT) {
-            listOf(
-                export,
-                import,
-                advertiseIsEnabled,
-                dataSaverEnabled,
-                enableNightMode,
-                launchBoostEnabled,
-                vibrationEnabled,
-                animationEnabled,
-                soundTriggerEnabled,
-                fullBackupDeferred,
-                keyValueBackupDeferred,
-                fireWallEnabled,
-                gpsMode,
-                adjustBrightnessEnabled,
-                adjustBrightnessFactor,
-                forceAllAppsStandby,
-                forceBackgroundCheck,
-                optionalSensorsEnabled,
-                aodEnabled,
-                quickDozeEnabled,
-                restore
-            ).forEach {
-                it.isEnabled = false
-            }
+        listOf(
+            export,
+            import,
+            advertiseIsEnabled,
+            dataSaverEnabled,
+            enableNightMode,
+            launchBoostEnabled,
+            vibrationEnabled,
+            animationEnabled,
+            soundTriggerEnabled,
+            fullBackupDeferred,
+            keyValueBackupDeferred,
+            fireWallEnabled,
+            gpsMode,
+            adjustBrightnessEnabled,
+            adjustBrightnessFactor,
+            forceAllAppsStandby,
+            forceBackgroundCheck,
+            optionalSensorsEnabled,
+            aodEnabled,
+            quickDozeEnabled,
+            restore
+        ).forEach {
+            it.isEnabled = profile != Profile.DEFAULT
         }
+
         advertiseIsEnabled.isChecked = currentProfile.advertiseIsEnabled
         dataSaverEnabled.isChecked = !currentProfile.dataSaverDisabled
         enableNightMode.isChecked = currentProfile.enableNightMode
