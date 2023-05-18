@@ -1,0 +1,35 @@
+pipeline:
+    check:
+        image: runmymind/docker-android-sdk:latest
+        when:
+          branch: main
+          event: [push, pull_request]
+        commands:
+          - ./gradlew build --stacktrace
+
+    build:
+        image: runmymind/docker-android-sdk:latest
+        when:
+          branch: main
+          event: tag
+        commands:
+          - export RELEASE_STORE_FILE=$PWD/release-key.jks
+          - echo $RELEASE_KEY | base64 -d > $RELEASE_STORE_FILE
+          - ./gradlew -Psign build --stacktrace
+          - mv app/build/outputs/apk/release/app-release.apk app/build/outputs/apk/savertuner.apk
+        environment:
+          - RELEASE_KEY_ALIAS=savertuner
+        secrets: [ release_key, release_store_password, release_key_password ]
+
+    upload:
+        image: gurken2108/drone-gitea-package
+        when:
+            branch: main
+            event: tag
+        settings:
+            user:
+                from_secret: codeberg_user
+            token:
+                from_secret: codeberg_token
+            file: app/build/outputs/apk/savertuner.apk
+
