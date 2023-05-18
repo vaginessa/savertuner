@@ -15,20 +15,18 @@ pipeline:
         commands:
           - export RELEASE_STORE_FILE=$PWD/release-key.jks
           - echo $RELEASE_KEY | base64 -d > $RELEASE_STORE_FILE
-          - ./gradlew -Psign build --stacktrace
+          - ./gradlew -Psign assembleRelease --stacktrace
           - mv app/build/outputs/apk/release/app-release.apk app/build/outputs/apk/savertuner.apk
         environment:
           - RELEASE_KEY_ALIAS=savertuner
         secrets: [ release_key, release_store_password, release_key_password ]
 
     upload:
-        image: gurken2108/drone-gitea-package
+        image: codeberg.org/s1m/woodpecker-upload:latest
         when:
             branch: main
             event: tag
         settings:
-            user:
-                from_secret: codeberg_user
             token:
                 from_secret: codeberg_token
             file: app/build/outputs/apk/savertuner.apk
