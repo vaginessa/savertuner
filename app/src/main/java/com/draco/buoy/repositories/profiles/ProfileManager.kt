@@ -75,6 +75,12 @@ class ProfileManager(context: Context) {
         }
     }
 
+    fun restore() {
+        setConfig(null)
+        // apply battery config
+        current = current
+    }
+
     companion object {
         const val PREF_PREFIX = "com.draco.buoy.repositories.profiles.ProfileManager"
         const val CURRENT_PROFILE = "$PREF_PREFIX#CURRENT_PROFILE"

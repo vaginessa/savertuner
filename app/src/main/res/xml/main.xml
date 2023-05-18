@@ -135,6 +135,11 @@
             android:summary="@string/pref_config_summary_quick_doze_enabled"
             android:key="@string/pref_config_key_quick_doze_enabled"
             android:icon="@drawable/ic_baseline_snooze_24" />
+        <Preference
+            android:title="@string/pref_config_title_restore"
+            android:summary="@string/pref_config_summary_restore"
+            android:key="@string/pref_config_key_restore"
+            android:icon="@drawable/ic_baseline_restore_24" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/category_about">
         <Preference

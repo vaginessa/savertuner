@@ -41,6 +41,7 @@ class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnS
     private lateinit var optionalSensorsEnabled: SwitchPreference
     private lateinit var aodEnabled: SwitchPreference
     private lateinit var quickDozeEnabled: SwitchPreference
+    private lateinit var restore: Preference
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.main, rootKey)
@@ -90,6 +91,7 @@ class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnS
         optionalSensorsEnabled = findPreference(getString(R.string.pref_config_key_optional_sensors_enabled))!!
         aodEnabled = findPreference(getString(R.string.pref_config_key_aod_enabled))!!
         quickDozeEnabled = findPreference(getString(R.string.pref_config_key_quick_doze_enabled))!!
+        restore = findPreference(getString(R.string.pref_config_key_restore))!!
 
         refreshSettings()
         lockSettings()
@@ -138,6 +140,7 @@ class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnS
 
             getString(R.string.pref_key_export) -> exportSettings()
             getString(R.string.pref_key_import) -> (preference as EditTextPreference).text = batterySaverManager.getConstantsString()
+            getString(R.string.pref_config_key_restore) -> profileManager.restore()
 
             getString(R.string.pref_source_key) -> openURL(getString(R.string.source_url))
             else -> return super.onPreferenceTreeClick(preference)
@@ -213,7 +216,8 @@ class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnS
                 forceBackgroundCheck,
                 optionalSensorsEnabled,
                 aodEnabled,
-                quickDozeEnabled
+                quickDozeEnabled,
+                restore
             ).forEach {
                 it.isEnabled = false
             }

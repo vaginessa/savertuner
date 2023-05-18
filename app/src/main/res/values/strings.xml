@@ -128,4 +128,7 @@
     <string name="pref_source_key" translatable="false">source</string>
 
     <string name="pref_config_title_force_background_check">Force background check</string>
+    <string name="pref_config_title_restore">Restore</string>
+    <string name="pref_config_summary_restore">Reset this profile to its default values</string>
+    <string name="pref_config_key_restore" translatable="false">restore</string>
 </resources>
