@@ -30,4 +30,5 @@ pipeline:
             token:
                 from_secret: codeberg_token
             file: app/build/outputs/apk/savertuner.apk
+            fastlane: true
 
