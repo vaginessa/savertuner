@@ -33,7 +33,7 @@ It also enables something called "sticky" low power mode. Usually, when the devi
 # Disclaimers
 Note that this app requires the WRITE_SECURE_SETTINGS permission that can be granted with EITHER a PC using ADB or root. Root is NOT required for this app, it is optional. Android 8.0+ is supported, with more features enabled on Android 10+.
 
-Uninstalling the app will not reset the battery saver configuration. You must click the Reset button to undo all changes made by Buoy.
+Uninstalling the app will not reset the battery saver configuration. You must set the Default profile to undo all changes before uninstalling.
 
 # Credit
 
