@@ -33,6 +33,12 @@ It also enables something called "sticky" low power mode. Usually, when the devi
 # Disclaimers
 Note that this app requires the WRITE_SECURE_SETTINGS permission that can be granted with EITHER a PC using ADB or root. Root is NOT required for this app, it is optional. Android 8.0+ is supported, with more features enabled on Android 10+.
 
+The command to grant the permission is:
+
+```
+adb shell pm grant s1m.savertuner android.permission.WRITE_SECURE_SETTINGS
+```
+
 Uninstalling the app will not reset the battery saver configuration. You must set the Default profile to undo all changes before uninstalling.
 
 # Credit
