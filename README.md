@@ -6,6 +6,12 @@ Android's built-in battery saver can be set quite finely. However, it is not con
 
 This application is based on [Buoy](https://github.com/tytydraco/Buoy). It adds support for Android 12+, save and restore profiles and improves the settings tiles.
 
+[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
+     alt="Get it on F-Droid"
+     height="80">](https://f-droid.org/packages/s1m.savertuner/)
+
+Or download the latest APK from the [Releases Section](https://codeberg.org/s1m/savertuner/releases).
+
 # Features
 It uses hidden Android settings to specify custom behavior for the built in battery saver. Features include the following toggles:
 
