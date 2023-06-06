@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="location_modes_entries">
+        <item>Стандартный доступ к местоположению</item>
+        <item>GPS отключен при выключенном экране</item>
+        <item>Все отключено при выключенном экране</item>
+        <item>Обновлять местоположение только в открытом приложении</item>
+        <item>Отключать при выключенном экране</item>
+    </string-array>
+</resources>
