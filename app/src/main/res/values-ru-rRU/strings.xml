@@ -8,12 +8,12 @@
     <string name="copied">Скопировано в буфер обмена</string>
 
     <string name="snackbar_intent_failed">Не удалось обработать это действие</string>
-    <string name="snackbar_failed_to_apply">Не удалось отправить команду; устройство скорее всего несовместимо</string>
+    <string name="snackbar_failed_to_apply">Не удалось отправить команду, устройство скорее всего несовместимо</string>
     <string name="snackbar_low_power">Изменения вступят в силу, когда устройство перейдет в режим энергосбережения.</string>
     <string name="snackbar_applied">Профиль успешно применен</string>
     <string name="snackbar_reset">Профиль успешно сброшен</string>
 
-    <string name="export_share_title">Настройки экономии заряда батареиs</string>
+    <string name="export_share_title">Настройки экономии заряда батареи</string>
 
     <string name="category_profiles">Профили</string>
     <string name="category_share">Поделиться</string>
@@ -48,13 +48,13 @@
     <string name="pref_config_summary_datasaver_enabled">Уменьшите объем данных, отправляемых и получаемых при лимитных подключениях и мобильных данных</string>
 
     <string name="pref_config_title_enable_night_mode">Включить темную тему</string>
-    <string name="pref_config_summary_enable_night_mode">Используйте более темные цвета, чтобы уменьшить энергопотребление OLED-экранов</string>
+    <string name="pref_config_summary_enable_night_mode">Использовать более темные цвета, чтобы уменьшить энергопотребление OLED-экранов</string>
 
     <string name="pref_config_title_launch_boost_enabled">Включить ускорение запуска</string>
-    <string name="pref_config_summary_launch_boost_enabled">Ускорьте работу ЦП при открытии приложений, чтобы ускорить время их запуска.</string>
+    <string name="pref_config_summary_launch_boost_enabled">Ускорить работу ЦП при открытии приложений, чтобы ускорить время их запуска</string>
 
     <string name="pref_config_title_vibration_enabled">Включить вибрацию</string>
-    <string name="pref_config_summary_vibration_enabled">Разрешить вибрацию касаний и уведомлений</string>
+    <string name="pref_config_summary_vibration_enabled">Разрешить вибрацию при касаниях и уведомлениях</string>
 
     <string name="pref_config_title_animation_enabled">Включить анимации</string>
     <string name="pref_config_summary_animation_enabled">Продолжать отображать анимации</string>
@@ -74,14 +74,14 @@
     <string name="pref_config_title_gps_mode">Режим местоположения</string>
     <string name="pref_config_summary_gps_mode">Как запросы местоположения обрабатываются в режиме низкого энергопотребления</string>
 
-    <string name="pref_config_title_adjust_brightness_enabled">Настройка яркости</string>
-    <string name="pref_config_summary_adjust_brightness_enabled">Уменьшить максимальную яркость на панели</string>
+    <string name="pref_config_title_adjust_brightness_enabled">Настройка яркости экрана</string>
+    <string name="pref_config_summary_adjust_brightness_enabled">Уменьшить максимальную яркость экрана</string>
 
     <string name="pref_config_title_adjust_brightness_factor">Коэффициент яркости</string>
     <string name="pref_config_summary_adjust_brightness_factor">На какой коэффициент уменьшить яркость экрана</string>
 
     <string name="pref_config_title_force_all_apps_standby">Перевод приложений в режим ожидания</string>
-    <string name="pref_config_summary_force_all_apps_standby">Фоновые приложения очень быстро засыпаютy</string>
+    <string name="pref_config_summary_force_all_apps_standby">Фоновые приложения очень быстро засыпают</string>
 
     <string name="pref_config_summary_force_background_check">Остановить фоновые службы для простаивающих процессов</string>
 
@@ -92,12 +92,12 @@
     <string name="pref_config_summary_aod_enabled">Отображение Всегда включенного экрана в спящем режиме</string>
 
     <string name="pref_config_title_quick_doze_enabled">Включить быстрое засыпание</string>
-    <string name="pref_config_summary_quick_doze_enabled">Перейти в глубокий сон, как только экран выключится</string>
+    <string name="pref_config_summary_quick_doze_enabled">Переводить устройство в глубокий сон, как только экран выключится</string>
 
     <string name="pref_source_title">Исходный код</string>
     <string name="pref_source_summary">Посмотрите этот проект на Codeberg</string>
 
     <string name="pref_config_title_force_background_check">Принудительная проверка фоновых данных</string>
     <string name="pref_config_title_restore">Сбросить</string>
-    <string name="pref_config_summary_restore">Сбросьте этот профиль к значениям по умолчанию</string>
+    <string name="pref_config_summary_restore">Сбросить этот профиль к значениям по умолчанию</string>
 </resources>
