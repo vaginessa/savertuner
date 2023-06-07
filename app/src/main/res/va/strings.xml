@@ -1,0 +1,103 @@
+<resources>
+
+    <string name="title_permission">Дозволи</string>
+
+    <string name="permission_message">Нам потрібний спеціальний дозвіл, щоб продовжити. Використовуйте ADB для запуску наступної команди (один рядок):</string>
+
+    <string name="please_wait">Очікування дозволу</string>
+    <string name="copied">Скопійовано в буфер обміну</string>
+
+    <string name="snackbar_intent_failed">Не вдалося обробити цю дію</string>
+    <string name="snackbar_failed_to_apply">Не вдалося відправити команду, пристрій швидше за все несумісний</string>
+    <string name="snackbar_low_power">Зміни набудуть чинності, коли пристрій перейде в режим енергозбереження</string>
+    <string name="snackbar_applied">Профіль успішно застосований</string>
+    <string name="snackbar_reset">Профіль успішно скинутий</string>
+
+    <string name="export_share_title">Налаштування заощадження батареї</string>
+
+    <string name="category_profiles">Профілі</string>
+    <string name="category_share">Поділитися</string>
+    <string name="category_about">Інформація</string>
+    <string name="category_config">Налаштування</string>
+
+    <string name="pref_profile_title_default">За замовчуванням</string>
+    <string name="pref_profile_summary_default">Використовуйте стандартні настройки енергозбереження пристрою</string>
+
+    <string name="pref_profile_title_light">Слабкий</string>
+    <string name="pref_profile_summary_light">Незначне збереження заряду батареї, яке практично не впливає на роботу користувача</string>
+
+    <string name="pref_profile_title_moderate">Помірний</string>
+    <string name="pref_profile_summary_moderate">Збалансований набір налаштувань для економії заряду батареї без зниження продуктивності</string>
+
+    <string name="pref_profile_title_high">Високий</string>
+    <string name="pref_profile_summary_high">Агресивне зниження енергоспоживання зі значною втратою продуктивності</string>
+
+    <string name="pref_profile_title_extreme">Екстримальний</string>
+    <string name="pref_profile_summary_extreme">Максимальний набір для максимально можливої економії енергії</string>
+
+    <string name="pref_title_export">Експорт</string>
+    <string name="pref_summary_export">Поділіться налаштуваннями заощадження батареї в іншому місці</string>
+
+    <string name="pref_title_import">Імпорт</string>
+    <string name="pref_summary_import">Імпорт налаштувань із профілю</string>
+
+    <string name="pref_config_title_advertise_is_enabled">Оповіщення про енергозбереження</string>
+    <string name="pref_config_summary_advertise_is_enabled">Оповіщення про те, що пристрій знаходиться в режимі зниженого енергоспоживання; деякі програми будуть використовувати цю інформацію для зниження енергоспоживання</string>
+
+    <string name="pref_config_title_datasaver_enabled">Включити економію трафіку</string>
+    <string name="pref_config_summary_datasaver_enabled">Зменшіть обсяг даних, що надсилаються та одержуються при лімітних підключеннях та мобільних даних</string>
+
+    <string name="pref_config_title_enable_night_mode">Включити темну тему</string>
+    <string name="pref_config_summary_enable_night_mode">Використовуйте темніші кольори, щоб зменшити енергоспоживання OLED-екранів</string>
+
+    <string name="pref_config_title_launch_boost_enabled">Увімкнути прискорення запуску</string>
+    <string name="pref_config_summary_launch_boost_enabled">Прискорити роботу ЦП під час відкриття додатків, щоб прискорити час їх запуску</string>
+
+    <string name="pref_config_title_vibration_enabled">Увімкнути вібрацію</string>
+    <string name="pref_config_summary_vibration_enabled">Дозволити вібрацію при торканні та повідомленні</string>
+
+    <string name="pref_config_title_animation_enabled">Увімкнути анімації</string>
+    <string name="pref_config_summary_animation_enabled">Продовжувати відображати анімації</string>
+
+    <string name="pref_config_title_soundtrigger_enabled">Увімкнути SoundTrigger</string>
+    <string name="pref_config_summary_soundtrigger_enabled">Дозволити доступ до апаратного API SoundTrigger</string>
+
+    <string name="pref_config_title_fullbackup_deferred">Відкласти повне резервне копіювання</string>
+    <string name="pref_config_summary_fullbackup_deferred">Перенести резервне копіювання в хмару на більш пізній час</string>
+
+    <string name="pref_config_title_keyvaluebackup_deferred">Відкласти резервне копіювання ключ-значення</string>
+    <string name="pref_config_summary_keyvaluebackup_deferred">Перенести резервне копіювання налаштувань програми в хмару на більш пізній час</string>
+
+    <string name="pref_config_title_firewall_enabled">Увімкнути брандмауер</string>
+    <string name="pref_config_summary_firewall_enabled">Захист від потенційно шкідливих веб-запитів</string>
+
+    <string name="pref_config_title_gps_mode">Режим розташування</string>
+    <string name="pref_config_summary_gps_mode">Як запити розташування обробляються в режимі низького енергоспоживання</string>
+
+    <string name="pref_config_title_adjust_brightness_enabled">Налаштування яскравості</string>
+    <string name="pref_config_summary_adjust_brightness_enabled">Зменшити максимальну яскравість екрана</string>
+
+    <string name="pref_config_title_adjust_brightness_factor">Коефіцієнт яскравості</string>
+    <string name="pref_config_summary_adjust_brightness_factor">На який коефіцієнт зменшити яскравість екрану</string>
+
+    <string name="pref_config_title_force_all_apps_standby">Переклад додатків у режим очікуванняя</string>
+    <string name="pref_config_summary_force_all_apps_standby">Фонові програми дуже швидко засинають</string>
+
+    <string name="pref_config_summary_force_background_check">Зупинити фонові служби для простоюючих процесів</string>
+
+    <string name="pref_config_title_optional_sensors_enabled">Увімкнути додаткові датчики</string>
+    <string name="pref_config_summary_optional_sensors_enabled">Дозволити непотрібні запити датчиків (наприклад, крайові датчики)</string>
+
+    <string name="pref_config_title_aod_enabled">Увімкнути Завжди увімкнений екран</string>
+    <string name="pref_config_summary_aod_enabled">Відображення Завжди увімкненого екрана в режимі сну</string>
+
+    <string name="pref_config_title_quick_doze_enabled">Увімкнути швидке засинання</string>
+    <string name="pref_config_summary_quick_doze_enabled">Переводити пристрій у глибокий сон, як тільки екран вимкнеться</string>
+
+    <string name="pref_source_title">Вихідний код</string>
+    <string name="pref_source_summary">Подивіться цей проект на Codeberg</string>
+
+    <string name="pref_config_title_force_background_check">Примусова перевірка фонових даних</string>
+    <string name="pref_config_title_restore">Скинути</string>
+    <string name="pref_config_summary_restore">Скиньте цей профіль до значень за промовчанням</string>
+</resources>
