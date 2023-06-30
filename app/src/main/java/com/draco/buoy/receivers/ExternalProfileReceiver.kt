@@ -18,6 +18,7 @@ class ExternalProfileReceiver : BroadcastReceiver() {
 
         profileName?.let {
             when (it) {
+                context.getString(R.string.pref_profile_key_default) -> ProfileManager(context).current = Profile.DEFAULT
                 context.getString(R.string.pref_profile_key_light) -> ProfileManager(context).current = Profile.LIGHT
                 context.getString(R.string.pref_profile_key_moderate) -> ProfileManager(context).current = Profile.MODERATE
                 context.getString(R.string.pref_profile_key_high) -> ProfileManager(context).current = Profile.HIGH
