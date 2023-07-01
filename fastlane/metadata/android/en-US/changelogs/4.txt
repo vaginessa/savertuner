@@ -1,0 +1,2 @@
+- Add missing default profile for tasker
+- Bump dependencies
