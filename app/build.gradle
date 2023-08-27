@@ -6,7 +6,6 @@ plugins {
 
 android {
     compileSdk 33
-    buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "s1m.savertuner"
