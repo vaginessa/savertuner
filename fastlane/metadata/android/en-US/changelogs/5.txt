@@ -1,0 +1,2 @@
+- Refresh UI after resetting profile
+- Bump dependencies
