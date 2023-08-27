@@ -140,7 +140,11 @@ class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnS
 
             getString(R.string.pref_key_export) -> exportSettings()
             getString(R.string.pref_key_import) -> (preference as EditTextPreference).text = batterySaverManager.getConstantsString()
-            getString(R.string.pref_config_key_restore) -> profileManager.restore()
+            getString(R.string.pref_config_key_restore) -> {
+                profileManager.restore()
+                Snackbar.make(requireView(), getString(R.string.snackbar_applied), Snackbar.LENGTH_SHORT).show()
+                refreshSettings()
+            }
 
             getString(R.string.pref_source_key) -> openURL(getString(R.string.source_url))
             else -> return super.onPreferenceTreeClick(preference)
