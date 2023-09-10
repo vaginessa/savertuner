@@ -1,0 +1,98 @@
+<resources>
+    <string name="app_name">SaverTuner</string>
+    <string name="title_permission">Permissões</string>
+    <string name="permission_message">Precisamos de uma permissão especial para continuar. Utilize o ADB para executar o seguinte comando (uma linha):</string>
+    <string name="please_wait">À espera de permissão</string>
+    <string name="copied">Copiado para a área de transferência</string>
+    <string name="snackbar_intent_failed">Não foi possível processar esta ação</string>
+    <string name="snackbar_failed_to_apply">Falha na aplicação; o dispositivo é provavelmente incompatível</string>
+    <string name="snackbar_low_power">As alterações terão efeito quando o dispositivo estiver no modo de poupança de bateria</string>
+    <string name="snackbar_applied">Perfil aplicado com êxito</string>
+    <string name="snackbar_reset">Perfil reposto com êxito</string>
+    <string name="export_share_title">Constantes de poupança de bateria</string>
+    <string name="category_profiles">Perfis</string>
+    <string name="category_share">Compartilhar</string>
+    <string name="category_about">Sobre</string>
+    <string name="category_config">Configuração</string>
+
+    <string name="pref_profile_title_default">Predefinição</string>
+    <string name="pref_profile_summary_default">Utilizar as definições de poupança de bateria predefinidas do dispositivo</string>
+
+    <string name="pref_profile_title_light">Luz</string>
+    <string name="pref_profile_summary_light">Conservação marginal da energia da bateria que quase não afeta a experiência do utilizador</string>
+
+    <string name="pref_profile_title_moderate">Moderado</string>
+    <string name="pref_profile_summary_moderate">Conjunto equilibrado de ajustes para conservar a vida da bateria sem afetar o desempenho</string>
+
+    <string name="pref_profile_title_high">Alta</string>
+    <string name="pref_profile_summary_high">Redução agressiva do consumo de energia com perda significativa de desempenho</string>
+
+    <string name="pref_profile_title_extreme">Extremo</string>
+    <string name="pref_profile_summary_extreme">Conjunto final de ajustes para economizar o máximo de energia possível</string>
+
+    <string name="pref_title_export">Exportar</string>
+    <string name="pref_summary_export">Partilhar as constantes de poupança de bateria noutro local</string>
+
+    <string name="pref_title_import">Importar</string>
+    <string name="pref_summary_import">Configurar utilizando um novo perfil</string>
+
+    <string name="pref_config_title_advertise_is_enabled">Anunciar o economizador de energia</string>
+    <string name="pref_config_summary_advertise_is_enabled">Alertar as aplicações de que o dispositivo está no modo de baixo consumo; algumas aplicações utilizarão esta informação para reduzir o consumo de energia</string>
+
+    <string name="pref_config_title_datasaver_enabled">Ativar a poupança de dados</string>
+    <string name="pref_config_summary_datasaver_enabled">Reduzir os dados enviados e recebidos em ligações com contador e em dados móveis</string>
+
+    <string name="pref_config_title_enable_night_mode">Ativar o modo noturno</string>
+    <string name="pref_config_summary_enable_night_mode">Utilizar cores mais escuras para reduzir o consumo de energia dos painéis OLED</string>
+
+    <string name="pref_config_title_launch_boost_enabled">Ativar o launch boost</string>
+    <string name="pref_config_summary_launch_boost_enabled">Acelerar a CPU ao abrir aplicações para acelerar o seu tempo de arranque</string>
+
+    <string name="pref_config_title_vibration_enabled">Ativar vibrações</string>
+    <string name="pref_config_summary_vibration_enabled">Permitir vibrações de toque e de notificação</string>
+
+    <string name="pref_config_title_animation_enabled">Ativar animações</string>
+    <string name="pref_config_summary_animation_enabled">Continuar a apresentar animações</string>
+
+    <string name="pref_config_title_soundtrigger_enabled">Ativar os accionadores de som</string>
+    <string name="pref_config_summary_soundtrigger_enabled">Permitir acesso à API de hardware SoundTrigger</string>
+
+    <string name="pref_config_title_fullbackup_deferred">Adiar backups completos</string>
+    <string name="pref_config_summary_fullbackup_deferred">Reprogramar as cópias de segurança da nuvem do dispositivo para mais tarde</string>
+
+    <string name="pref_config_title_keyvaluebackup_deferred">Adiar backups de valores-chave</string>
+    <string name="pref_config_summary_keyvaluebackup_deferred">Reprogramar backups na nuvem das configurações do aplicativo para mais tarde</string>
+
+    <string name="pref_config_title_firewall_enabled">Ativar firewall</string>
+    <string name="pref_config_summary_firewall_enabled">Defender-se contra pedidos web possivelmente maliciosos</string>
+
+    <string name="pref_config_title_gps_mode">Modo de localização</string>
+    <string name="pref_config_summary_gps_mode">Como são tratados os pedidos de localização no modo de baixo consumo</string>
+
+    <string name="pref_config_title_adjust_brightness_enabled">Ajustar o brilho</string>
+    <string name="pref_config_summary_adjust_brightness_enabled">Reduzir o brilho máximo no painel</string>
+
+    <string name="pref_config_title_adjust_brightness_factor">Fator de brilho</string>
+    <string name="pref_config_summary_adjust_brightness_factor">Por que fator reduzir o brilho do ecrã</string>
+
+    <string name="pref_config_title_force_all_apps_standby">Forçar as aplicações a entrar em modo de espera</string>
+    <string name="pref_config_summary_force_all_apps_standby">As aplicações em segundo plano são postas a dormir muito rapidamente</string>
+
+    <string name="pref_config_summary_force_background_check">Parar serviços em segundo plano para processos inativos</string>
+
+    <string name="pref_config_title_optional_sensors_enabled">Ativar sensores opcionais</string>
+    <string name="pref_config_summary_optional_sensors_enabled">Permitir pedidos de sensores desnecessários (ou seja, sensores de borda)</string>
+
+    <string name="pref_config_title_aod_enabled">Ecrã sempre ligado ativado</string>
+    <string name="pref_config_summary_aod_enabled">Apresentar o AOD no modo de suspensão</string>
+
+    <string name="pref_config_title_quick_doze_enabled">Cochilo rápido ativado</string>
+    <string name="pref_config_summary_quick_doze_enabled">Entrar em sono profundo assim que o ecrã é desligado</string>
+
+    <string name="pref_source_title">Código fonte</string>
+    <string name="pref_source_summary">Veja este projeto no Codeberg</string>
+
+    <string name="pref_config_title_force_background_check">Forçar verificação de antecedentes</string>
+    <string name="pref_config_title_restore">Restaurar</string>
+    <string name="pref_config_summary_restore">Repor este perfil nos seus valores predefinidos</string>
+</resources>
