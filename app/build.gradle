@@ -7,6 +7,10 @@ plugins {
 android {
     compileSdk 33
 
+    androidResources {
+        generateLocaleConfig true
+    }
+
     defaultConfig {
         applicationId "s1m.savertuner"
         minSdk 26
