@@ -40,8 +40,64 @@
     <string name="pref_title_export">Exportieren</string>
     <string name="pref_summary_export">Teile die Energiesparkonstanten, um sie woanders zu nutzen</string>
     <string name="pref_title_import">Importieren</string>
+    <string name="pref_summary_import">Mit einem neuen Profil konfigurieren</string>
+    <string name="pref_config_summary_advertise_is_enabled">Apps darüber informieren, dass sich das Gerät im
+        Energiesparmodus befindet; einige Apps nutzen diese Information, um ihren Stromverbrauch zu reduzieren
+    </string>
+    <string name="pref_config_title_datasaver_enabled">Aktiviere Datensparen</string>
+    <string name="pref_config_summary_datasaver_enabled">"Reduziere die Datenmenge, die über Mobiledanten und
+        gebührenpflichige Verbindungen gesendet wird"
+    </string>
+    <string name="pref_config_title_enable_night_mode">Aktiviere Nachtmodus</string>
+    <string name="pref_config_summary_enable_night_mode">Nutze dunklere Farben um den Stromverbrauch bei OLED-Displays
+        zu verringern
+    </string>
+    <string name="pref_config_title_launch_boost_enabled">Aktiviere Startboost</string>
+    <string name="pref_config_summary_launch_boost_enabled">Beschläunige die CPU wenn Apps geöffnet werden, damit ihre
+        Startzeit veringert wird
+    </string>
     <string name="pref_config_title_vibration_enabled">Aktiviere Vibrationen</string>
     <string name="pref_config_summary_vibration_enabled">Erlaube Berührungs- und Benachritigungsvibrationen</string>
     <string name="pref_config_title_animation_enabled">Aktiviere Animationen</string>
+    <string name="pref_config_summary_animation_enabled">Zeige weiterhin Animationen</string>
+    <string name="pref_config_title_soundtrigger_enabled">Aktiviere Sound triggers</string>
+    <string name="pref_config_summary_soundtrigger_enabled">Erlaube den Zugriff auf die SoundTrigger Hardware API
+    </string>
+    <string name="pref_config_title_fullbackup_deferred">Vollständige Backups aufschieben</string>
+    <string name="pref_config_summary_fullbackup_deferred">Verschiebe Cloud Sicherungen des Gerätes auf einen späteren
+        Zeitpunkt
+    </string>
+    <string name="pref_config_title_keyvaluebackup_deferred">Keyvalue Backups auschieben</string>
+    <string name="pref_config_summary_keyvaluebackup_deferred">Verschiebe Cloud Sicherungen der App-Einstellungen auf
+        einen späteren Zeitpunkt
+    </string>
+    <string name="pref_config_title_firewall_enabled">Aktiviere Firewall</string>
+    <string name="pref_config_summary_firewall_enabled">Abwehr möglicherweise bösartiger Webanfragen</string>
+    <string name="pref_config_title_gps_mode">Standort Modus</string>
+    <string name="pref_config_summary_gps_mode">Wie Standort Anfragen im Energiesparmodus gehandhabt werden</string>
+    <string name="pref_config_title_adjust_brightness_enabled">Helligkeit anpassen</string>
+    <string name="pref_config_summary_adjust_brightness_enabled">Reduziere die maximale Helligkeit des Displays</string>
+    <string name="pref_config_title_adjust_brightness_factor">Helligkeitsfaktor</string>
+    <string name="pref_config_summary_adjust_brightness_factor">Um welchen Faktor die Helligkeit des Displays reduziert
+        wird
+    </string>
+    <string name="pref_config_title_force_all_apps_standby">Zwinge alle Apps in Standby</string>
+    <string name="pref_config_summary_force_all_apps_standby">Hintergrundapps werden sehr schnell in den Standby Modus
+        befördert
+    </string>
+    <string name="pref_config_summary_force_background_check">"Stoppe nicht genutzte Hintergrundprozesse "</string>
+    <string name="pref_config_title_optional_sensors_enabled">Aktiviere optionale Sensoren</string>
+    <string name="pref_config_summary_optional_sensors_enabled">Erlaube unnötige Sensoranfragen (z.B. Randsensoren)
+    </string>
+    <string name="pref_config_title_aod_enabled">Aktiviere Always-on-Display</string>
+    <string name="pref_config_summary_aod_enabled">Zeige das Always-on-Display, wenn der Bildschirm aus ist</string>
+    <string name="pref_config_title_quick_doze_enabled">Aktiviere schnelles Schlummern</string>
+    <string name="pref_config_summary_quick_doze_enabled">Gehe in den Tiefschlaf, sobald der Bildschirm ausgeschaltet
+        wird
+    </string>
+    <string name="pref_source_title">Quellcode</string>
+    <string name="pref_source_summary">Besuchen Sie dieses Projekt auf Codeberg</string>
+    <string name="pref_config_title_force_background_check">Erzwinge Hintergrundprüfung</string>
+    <string name="pref_config_title_restore">Wiederherstellen</string>
     <string name="pref_config_summary_restore">Setzte dieses Profil auf seine Standartwerte zurück</string>
 </resources>
