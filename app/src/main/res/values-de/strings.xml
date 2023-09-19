@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SaverTuner</string>
+    <string name="title_permission">Berechtigungen</string>
+    <string name="permission_message">Um die Funktionsweise der App zu ermöglichen, braucht diese App eine besondere
+        Berechtigung. Um diese zu erteilen, muss über ADB der folgende Befehl ausgeführt werden (eine Zeile):
+    </string>
+    <string name="please_wait">Warte auf Berechtingung</string>
+    <string name="copied">In die Zwischenablage kopiert</string>
+    <string name="snackbar_intent_failed">Diese Aktion konnte nicht ausgeführt werden</string>
+    <string name="snackbar_failed_to_apply">Fehler bei der Anwendung der Einstellungen; das Gerät ist wahrscheinlich
+        Inkompatibel
+    </string>
+    <string name="snackbar_low_power">Änderungen werden übernommen, wenn sich das Gerät im Energiesparmodus befindet
+    </string>
+    <string name="snackbar_applied">Profil erfolgreich angewand</string>
+    <string name="snackbar_reset">Profil erfolgreich zurückgesetzt</string>
+    <string name="export_share_title">Energiesparkonstanten</string>
+    <string name="category_profiles">Profile</string>
+    <string name="category_share">Teilen</string>
+    <string name="category_about">Über</string>
+    <string name="category_config">Konfiguration</string>
+    <string name="pref_profile_title_default">Standard</string>
+    <string name="pref_profile_summary_default">Nutze die Energiesparmoduseinstellungen des Systems</string>
+    <string name="pref_profile_title_light">Leicht</string>
+    <string name="pref_profile_summary_light">Geringfügige Einsparung von Akkuleistung, die das Benutzererlebnis kaum
+        beeinträchtigt
+    </string>
+    <string name="pref_profile_title_moderate">Mittel</string>
+    <string name="pref_profile_summary_moderate">Ausgewogene Optimierungen, die die Akkulaufzeit schonen und die
+        Leistung nicht beeinträchtigen
+    </string>
+    <string name="pref_profile_title_high">Hoch</string>
+    <string name="pref_profile_summary_high">Aggressive Senkung des Stromverbrauchs bei erheblichem Leistungsverlust
+    </string>
+    <string name="pref_profile_title_extreme">Extrem</string>
+    <string name="pref_profile_summary_extreme">Maximale Energieeinsparung durch eine umfassende Reihe von
+        Optimierungen
+    </string>
+    <string name="pref_title_export">Exportieren</string>
+    <string name="pref_summary_export">Teile die Energiesparkonstanten, um sie woanders zu nutzen</string>
+    <string name="pref_title_import">Importieren</string>
+    <string name="pref_config_title_vibration_enabled">Aktiviere Vibrationen</string>
+    <string name="pref_config_summary_vibration_enabled">Erlaube Berührungs- und Benachritigungsvibrationen</string>
+    <string name="pref_config_title_animation_enabled">Aktiviere Animationen</string>
+    <string name="pref_config_summary_restore">Setzte dieses Profil auf seine Standartwerte zurück</string>
+</resources>
