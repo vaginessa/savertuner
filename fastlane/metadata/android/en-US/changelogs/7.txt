@@ -1,0 +1,4 @@
+- Target Sdk 34
+- Add german translation
+- Add user id to ADB command
+- Bump dependencies
