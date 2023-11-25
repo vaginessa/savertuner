@@ -1,0 +1,2 @@
+- Add dutch translation
+- Fix german translation
